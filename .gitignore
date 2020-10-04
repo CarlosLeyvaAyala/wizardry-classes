@@ -301,3 +301,4 @@ TSWLatexianTemp*
 .ionide
 *_temp.tex
 *.synctex.gz
+.vscode/numbered-bookmarks.json

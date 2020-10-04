@@ -1,0 +1,27 @@
+<?xml version='1.0'?><!-- Game is either sse, tesv, or fo4 -->
+<PapyrusProject xmlns="PapyrusProject.xsd"
+    Flags="TESV_Papyrus_Flags.flg"
+    Game="sse"
+    Output="Scripts"
+    Optimize="false"
+    Release="false"
+    Final="false">
+    <Variables>
+        <Variable Name="mod" Value="Wizardy Classes"/>
+        <Variable Name="version" Value="0.0"/>
+        <Variable Name="MO" Value="E:\Skyrim SE\MO2\mods"/>
+        <Variable Name="lib" Value="@MO\DM-SkyrimSE-Library\scripts"/>
+        <Variable Name="Skyrim" Value="D:\Steam\steamapps\common\Skyrim Special Edition"/>
+    </Variables>
+
+    <Imports>
+        <Import>@Skyrim\Data\Scripts\Source</Import>
+        <Import>@lib\Source</Import>
+        <Import>@MO\SkyUI_5.1_SDK\Scripts\source</Import>
+        <Import>@MO\JContainers SE\scripts\source</Import>
+        <Import>.\Scripts\Source</Import>
+    </Imports>
+    <Folders>
+        <Folder>.\Scripts\Source</Folder>
+    </Folders>
+</PapyrusProject>

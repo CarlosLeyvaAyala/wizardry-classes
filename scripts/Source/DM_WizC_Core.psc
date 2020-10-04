@@ -3,7 +3,7 @@ Scriptname DM_WizC_Core extends Quest
 Actor Property Player Auto
 DM_WizC_Perks Property Perks Auto
 DM_WizC_Spells Property Spells Auto
-
+; TODO: Translate to JContainers
 int Property Sm = 0 AutoReadOnly
 int Property HA = 1 AutoReadOnly
 int Property Bl = 2 AutoReadOnly

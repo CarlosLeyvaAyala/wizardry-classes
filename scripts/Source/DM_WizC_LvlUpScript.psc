@@ -1,4 +1,4 @@
-Scriptname DM_WizC_LvlUpScript extends Quest 
+Scriptname DM_WizC_LvlUpScript extends Quest
 
 GlobalVariable Property PlayerLvl Auto
 DM_WizC_Core Property Core Auto

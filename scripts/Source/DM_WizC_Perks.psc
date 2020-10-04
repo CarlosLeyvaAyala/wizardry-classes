@@ -1,4 +1,4 @@
-Scriptname DM_WizC_Perks extends Quest 
+Scriptname DM_WizC_Perks extends Quest
 
 Actor Property Player Auto
 
@@ -21,18 +21,18 @@ Perk Property AtkSpdBareHandsSyn Auto
 ; ###                       AUX                         ###
 ; #########################################################
 
+; Reapply all perks.
 Function ReapplyAll()
-    {Reapply all perks}
     ReapplyLevelSensitive()
 EndFunction
 
+; Reapply perks with calculations sensitive to level change.
 Function ReapplyLevelSensitive()
-    {Reapply perks with calculations sensitive to level change}
     Reapply(Acrobatics)
 EndFunction
 
+; Reapply a single perk.
 Function Reapply(Perk aPerk)
-    {Reapply a single perk}
     DM_WizC_ReappliablePerk pp = aPerk as DM_WizC_ReappliablePerk
     If pp && pp.CanReapply()
         pp.Reapply()
