@@ -3,16 +3,6 @@ Scriptname DM_WizC_MCM extends SKI_ConfigBase
 
 DM_WizC_Core Property Core Auto
 
-; #########################################################
-; ###               PRIVATE VARIABLES                   ###
-; #########################################################
-
-
-; #########################################################
-; ###                   MAINTENANCE                     ###
-; #########################################################
-
-
 int function GetVersion()
     return 1
 endFunction
@@ -29,12 +19,6 @@ endEvent
 
 event OnPageReset(string aPage)
     ;if aPage == _ppProfiles
-    ;    PageProfiles()
-    ;ElseIf aPage == _ppWidget
-    ;    PageWidget()
-    ;ElseIf aPage == _ppSkills
-    ;    PageSkills()
-    ;Else
     ;    PageMain()
     ;EndIf
 endEvent

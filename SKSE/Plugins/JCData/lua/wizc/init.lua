@@ -15,12 +15,12 @@
 -- for this (maybe we need to create a JObject instead of a table?).
 -- Fortunately, tables seem to be properly allocating inside Lua structrues themselves.
 
-package.path = package.path..";E:/Skyrim SE/MO2/mods/DM-SkyrimSE-Library/SKSE/Plugins/JCData/lua/?/init.lua"
-package.path = package.path..";E:/Skyrim SE/MO2/mods/JContainers SE/SKSE/Plugins/JCData/lua/?/init.lua"
+-- package.path = package.path..";E:/Skyrim SE/MO2/mods/DM-SkyrimSE-Library/SKSE/Plugins/JCData/lua/?/init.lua"
+-- package.path = package.path..";E:/Skyrim SE/MO2/mods/JContainers SE/SKSE/Plugins/JCData/lua/?/init.lua"
 
-local l = require 'dmlib'
+local l = jrequire 'dmlib'
 
-local wizardryclasses = {}
+local wizc = {}
 
 -- ;@ignore: this data is only for testing and developing
 local data = {
@@ -38,7 +38,7 @@ local data = {
 ---@param maxLvl number or nil
 ---@param minLvl number or nil
 ---@return number
-function wizardryclasses.valByLvl(minVal, maxVal, lvl, maxLvl, minLvl)
+function wizc.valByLvl(minVal, maxVal, lvl, maxLvl, minLvl)
     minLvl = minLvl or 1
     maxLvl = maxLvl or 50
     local cLvl = l.forceRange(minLvl, maxLvl)(lvl)
@@ -51,7 +51,7 @@ end
 
 --- See `_treeGen.lua` at:
 --- https://github.com/CarlosLeyvaAyala/Sandow-Plus-Plus
-function wizardryclasses.generateDataTree()
+function wizc.generateDataTree()
     -- local p = l.pipe(
     --     reportWidget.generateDataTree,
     --     skills.generateDataTree
@@ -74,15 +74,15 @@ local function genPlayerData(data)
     return data
 end
 
-function wizardryclasses.runTest()
+function wizc.runTest()
     local lvl = 10
-    print("jump", wizardryclasses.valByLvl(1.5, 4, lvl))
-    print("fall", wizardryclasses.valByLvl(0.5, 0.9, lvl))
+    print("jump", wizc.valByLvl(1.5, 4, lvl))
+    print("fall", wizc.valByLvl(0.5, 0.9, lvl))
     -- local p = l.pipe(
-    --     wizardryclasses.generateDataTree,
-    --     wizardryclasses.installAddons,
+    --     wizc.generateDataTree,
+    --     wizc.installAddons,
     --     genPlayerData,
-    --     wizardryclasses.getDefaults,
+    --     wizc.getDefaults,
     --     simulateDays
     -- )
     -- data = p(data)
@@ -90,4 +90,4 @@ function wizardryclasses.runTest()
 end
 
 
-return wizardryclasses
+return wizc

@@ -6,7 +6,7 @@ Sound Property LvlUpSound Auto
 
 Event OnStoryIncreaseLevel(Int aiNewLevel)
     PlayerLvl.SetValue(aiNewLevel as float)
-    Core.Perks.ReapplyLevelSensitive()
+    Core.Perks.ApplyLevelSensitive()
     ;Debug.Notification(PlayerLvl.getvalue())
     ; TODO: add synergy perks
     Stop()

@@ -2,39 +2,45 @@ Scriptname DM_WizC_Perks extends Quest
 
 Actor Property Player Auto
 
-; #########################################################
-; ###                  MCM SELECTABLE                   ###
-; #########################################################
+;>========================================================
+;>===                  PERKS - MAIN                  ===<;
+;>========================================================
 
 Perk Property Acrobatics Auto
 Perk Property AtkSpd Auto
 Perk Property BareHands Auto
+Perk Property ElemMage Auto
 Perk Property InstaKill Auto
 
-; #########################################################
-; ###                     SYNERGY                       ###
-; #########################################################
+;>========================================================
+;>===                PERKS - SYNERGY                 ===<;
+;>========================================================
 
 Perk Property AtkSpdBareHandsSyn Auto
 
-; #########################################################
-; ###                       AUX                         ###
-; #########################################################
+;>========================================================
+;>===                   FUNCTIONS                    ===<;
+;>========================================================
 
 ; Reapply all perks.
-Function ReapplyAll()
-    ReapplyLevelSensitive()
+Function ApplyAll()
+    ApplyLevelSensitive()
 EndFunction
 
 ; Reapply perks with calculations sensitive to level change.
-Function ReapplyLevelSensitive()
-    Reapply(Acrobatics)
+Function ApplyLevelSensitive()
+    _Apply(Acrobatics)
+    _Apply(ElemMage)
 EndFunction
 
 ; Reapply a single perk.
-Function Reapply(Perk aPerk)
+Function _Apply(Perk aPerk)
     DM_WizC_ReappliablePerk pp = aPerk as DM_WizC_ReappliablePerk
-    If pp && pp.CanReapply()
-        pp.Reapply()
+    If pp
+        If pp.CanReapply()
+            pp.Apply()
+        Else
+            pp.Restore()
+        Endif
     EndIf
 EndFunction

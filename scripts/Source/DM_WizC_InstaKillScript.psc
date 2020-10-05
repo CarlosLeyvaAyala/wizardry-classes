@@ -6,14 +6,14 @@ DM_DetectBrawlingScript Property Brawl Auto
 PerkCounter Property KillCount Auto
 Perk Property PerkAcrobatics Auto
 Perk Property PerkAtkSpd Auto
-Faction Property CurrentFollowerFaction  Auto  
+Faction Property CurrentFollowerFaction  Auto
 {Don't kill}
-Faction Property PlayerFaction  Auto  
+Faction Property PlayerFaction  Auto
 {Don't kill}
 GlobalVariable Property DisableInstaKill Auto
 
+; Randomly kill a target.
 Event OnEffectStart(Actor akTarget, Actor akCaster)
-    {Randomly kills target}
     If CantKill(akTarget)
         Dispel()
         Return
@@ -25,7 +25,7 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
 EndEvent
 
 bool Function CantKill(Actor akTarget)
-    Return akTarget.IsDead() || Chance() <= Utility.RandomFloat(0.0, 0.99999) || DisableInstaKill.GetValue() as int \ 
+    Return akTarget.IsDead() || Chance() <= Utility.RandomFloat(0.0, 0.99999) || DisableInstaKill.GetValue() as int \
          || akTarget.IsInFaction(CurrentFollowerFaction) || akTarget.IsInFaction(PlayerFaction)
          ;Brawl.IsBrawling(akTarget)  \
 EndFunction
@@ -50,4 +50,4 @@ float Function GetSynergy(float x)
     Return x
 EndFunction
 
-Faction Property PlayerFollowerFaction  Auto  
+Faction Property PlayerFollowerFaction  Auto

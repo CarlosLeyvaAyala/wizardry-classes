@@ -44,7 +44,6 @@ int minorSkN = 0                ; Minor skills selected
 bool[] majorSkills
 bool[] minorSkills
 
-
 ; #########################################################
 ; ###                   MAINTENANCE                     ###
 ; #########################################################
@@ -59,7 +58,7 @@ Function InitArrays()
 EndFunction
 
 Function OnGameReload()
-    Perks.ReapplyAll()
+    Perks.ApplyAll()
 EndFunction
 
 
