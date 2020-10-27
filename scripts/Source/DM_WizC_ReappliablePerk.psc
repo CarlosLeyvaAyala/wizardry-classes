@@ -29,3 +29,18 @@ float Function PlayerAV(string AV)
     ; Debug.MessageBox(AV + " base = " + Game.GetPlayer().GetBaseActorValue(AV))
     return Game.GetPlayer().GetActorValue(AV)
 EndFunction
+
+Function ReapplySpell(Spell aSpell)
+    Actor p = Game.GetPlayer()
+    MiscUtil.PrintConsole("Remove")
+    MiscUtil.PrintConsole(p.RemoveSpell(aSpell))
+
+    ; Utility.Wait(0.5)
+    MiscUtil.PrintConsole("Add")
+    MiscUtil.PrintConsole(p.AddSpell(aSpell, false))
+
+EndFunction
+
+Function ClearSpell(Spell aSpell)
+    Game.GetPlayer().RemoveSpell(aSpell)
+EndFunction

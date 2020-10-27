@@ -21,6 +21,7 @@
         <Import>@lib\Source</Import>
         <Import>@MO\SkyUI_5.1_SDK\Scripts\source</Import>
         <Import>@MO\JContainers SE\scripts\source</Import>
+        <Import>@MO\PapyrusUtil SE - Modders Scripting Utility Functions\Scripts\Source</Import>
         <Import>.\Scripts\Source</Import>
     </Imports>
     <Folders>

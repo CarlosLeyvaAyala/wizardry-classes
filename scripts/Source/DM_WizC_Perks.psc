@@ -11,6 +11,7 @@ Perk Property AtkSpd Auto
 Perk Property BareHands Auto
 Perk Property ElemMage Auto
 Perk Property InstaKill Auto
+Perk Property Unarmored Auto
 
 ;>========================================================
 ;>===                PERKS - SYNERGY                 ===<;
@@ -31,6 +32,7 @@ EndFunction
 Function ApplyLevelSensitive()
     _Apply(Acrobatics)
     _Apply(ElemMage)
+    _Apply(Unarmored)
 EndFunction
 
 ; Reapply a single perk.
